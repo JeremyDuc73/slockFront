@@ -1,0 +1,15 @@
+<h1>Profiles</h1>
+
+@if (profiles != [])
+{
+  <div class="mt-5 w-25">
+    <div *ngFor="let item of profiles">
+      <div class="card text-center mb-3">
+        <div class="card-body">
+          <h5 class="card-title">{{item.email}}</h5>
+          <button (click)="sendRequest(item.id)" class="mt-2 btn btn-primary">ADD FRIEND</button>
+        </div>
+      </div>
+    </div>
+  </div>
+}

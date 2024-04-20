@@ -1,0 +1,29 @@
+@if (messages != [])
+{
+  <div class="mt-5">
+    <div class="row" *ngFor="let item of messages">
+      @if (item.author == localStorage.getItem("currentEmail"))
+      {
+        <div class="card text-end mb-3 bg-primary offset-4 col-8">
+          <div class="card-body">
+            <h6 class="text-white">{{item.content}}</h6>
+          </div>
+        </div>
+      } @else
+      {
+        <div class="card text-start mb-3 bg-secondary col-8">
+          <div class="card-body">
+            <h6 class="text-white">{{item.content}}</h6>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+}
+
+<form class="fixed-bottom bg-dark" #messageForm="ngForm" (ngSubmit)="onSubmit(messageForm)">
+  <div class="mb-5 d-flex mt-4">
+    <input type="text" class="form-control me-5 ms-5" name="content" id="content" ngModel >
+    <button type="submit" class="btn btn-primary me-5" value="Send">Submit</button>
+  </div>
+</form>

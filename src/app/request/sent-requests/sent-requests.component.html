@@ -1,0 +1,15 @@
+<a class="btn btn-primary" href="/friends"> < BACK</a>
+<h1 class="mt-5">Sent requests</h1>
+
+@if (requests != [])
+{
+  <div class="mt-5 w-25">
+    <div *ngFor="let item of requests">
+      <div class="card text-center mb-3">
+        <div class="card-body">
+          <h5 class="card-title mb-0">sent to : {{item.email}}</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+}

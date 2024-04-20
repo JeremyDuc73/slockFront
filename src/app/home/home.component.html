@@ -1,0 +1,19 @@
+<h1 class="mb-4">Welcome to Slock</h1>
+
+<div class="d-flex">
+  <a href="/friends" class="btn btn-primary">CREATE CONVERSATION</a>
+</div>
+<h2 class="mt-5 mb-3">Your conversations : </h2>
+@if (convs != [])
+{
+  <div class="mt-5 w-25">
+    <div *ngFor="let item of convs">
+      <div class="card text-center mb-3">
+        <div class="card-body d-flex align-items-center justify-content-center">
+          <h5 class="card-title mb-0">{{item.profileEmail}}</h5>
+          <a [routerLink]="['/conversation/', item.id]" class="btn btn-primary ms-3">VIEW</a>
+        </div>
+      </div>
+    </div>
+  </div>
+}
